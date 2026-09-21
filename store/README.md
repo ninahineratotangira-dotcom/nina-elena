@@ -1,8 +1,12 @@
 # Slow Wave — Shopify Store
 
+**New Zealand duck down duvets, sold as a safe space.**
+
 A complete, research-backed ecommerce store build: strategy, compliance, product catalogue, copy, and a script that creates all of it in Shopify via the Admin API.
 
-**Built for:** New Zealand / Australia · sub-NZ$500 start · health & wellness (sleep sub-niche)
+**Built for:** New Zealand / Australia · sub-NZ$500 start · premium down bedding, sold on pre-order
+
+> **Three findings shaped this build.** Down content claims are actively prosecuted — the ACCC took undertakings from Downia, David Jones and Harris Scarfe over "100% down" claims that tested at 50–90%, and the AS 2479 tolerance defence failed. Importing down into NZ is a biosecurity process requiring an MPI Import Health Standard — so the plan sources domestically instead. And $500 doesn't buy duvets, so the model is pre-order: the customer pays, then you fill. See `strategy/00-strategy.md`.
 
 ---
 
@@ -14,7 +18,7 @@ A complete, research-backed ecommerce store build: strategy, compliance, product
 | [`strategy/01-compliance-nz-au.md`](strategy/01-compliance-nz-au.md) | **Read before writing any copy or ad.** What you can and cannot say |
 | [`strategy/sources.md`](strategy/sources.md) | Every data point above, sourced |
 | [`brand/brand-guide.md`](brand/brand-guide.md) | Name, positioning, voice, palette, photography direction |
-| [`products/catalog.json`](products/catalog.json) | 5 products, 3 collections — pricing, costs, descriptions |
+| [`products/catalog.json`](products/catalog.json) | 5 products (9 variants), 3 collections — pricing, costs, descriptions |
 | [`content/pages.json`](content/pages.json) | About, Shipping, Returns, Contact, FAQ |
 
 ---
@@ -81,7 +85,9 @@ Safe to re-run — anything that already exists by handle is skipped.
 
 ## What the script creates
 
-- **5 products** with description, price, compare-at price, SKU, cost-per-item, weight, tags, and stock level
+- **5 products / 9 variants** with description, price, compare-at price, SKU, cost-per-item, weight, tags and stock
+- **Size variants** (Single / Queen / King) on the duvet and the bundle
+- **Pre-order configuration** — duvet, pillow and bundle are created at zero stock with `inventoryPolicy: CONTINUE`, so they stay purchasable without a pre-order app
 - **3 collections**, with products assigned
 - **5 content pages**
 - Everything published to the Online Store sales channel
@@ -104,7 +110,10 @@ These need your decisions or a human in the admin UI:
 
 1. **Clear the name.** Check domain availability and search the IPONZ + IP Australia trade mark registers. Do not print packaging first.
 2. **Order samples** before the 100-unit buy. You have not seen this stock.
-3. **Launch tier 1 only.** The digital product carries no inventory risk. Find out whether the positioning converts *before* spending the $300 on stock. This ordering is the single biggest protection in the whole plan.
+3. **Get the finished-product test certificate** for the down/feather ratio before the duvet listing goes live, and keep it. Not the supplier's raw-fill spec sheet — the finished duvet. This is the single largest legal exposure in the store.
+4. **Confirm the origin of the down and the origin of the assembly separately, in writing.** They are often different countries, and "NZ made" on an imported fill is a country-of-origin breach.
+5. **Climb the trust ladder.** Nobody pre-orders a $549 duvet from a shop with no reviews. Launch on the $29 guide and the $49 mask, collect reviews, *then* push the duvet. `strategy/00-strategy.md` §5 explains why this ordering is the whole plan.
+6. **Shoot the sample yourself.** Supplier stock photos read as dropshipping and will sink the premium position.
 4. **Replace every `[BRACKETED]` placeholder** in `content/pages.json`. The Fair Trading Act requires a real, contactable trader identity.
 
 ---

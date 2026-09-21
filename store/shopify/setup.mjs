@@ -69,6 +69,14 @@ const M_VARIANTS_UPDATE = `
     }
   }`;
 
+const M_VARIANTS_CREATE = `
+  mutation($productId: ID!, $variants: [ProductVariantsBulkInput!]!, $strategy: ProductVariantsBulkCreateStrategy) {
+    productVariantsBulkCreate(productId: $productId, variants: $variants, strategy: $strategy) {
+      productVariants { id sku price selectedOptions { name value } }
+      userErrors { field message }
+    }
+  }`;
+
 const Q_PUBLICATIONS = `{ publications(first: 20) { nodes { id name } } }`;
 
 const M_PUBLISH = `
@@ -117,22 +125,69 @@ const M_INVENTORY_SET = `
 /** Shopify handles are matched exactly; quote to avoid tokenised partial matches. */
 const handleQuery = (handle) => `handle:'${handle}'`;
 
-function variantInput(p, variantId) {
-  const inventoryItem = {
-    tracked: p.requires_shipping !== false,
-    requiresShipping: p.requires_shipping !== false,
-  };
+/**
+ * Builds the inventoryItem payload shared by both the single- and
+ * multi-variant paths. `spec` is either the product itself (single variant)
+ * or one entry from its `variants` array.
+ */
+function inventoryItemInput(product, spec) {
+  const physical = product.requires_shipping !== false;
 
-  if (p.sku) inventoryItem.sku = p.sku;
-  if (p.cost != null) inventoryItem.cost = String(p.cost);
-  if (p.weight_grams) {
-    inventoryItem.measurement = {
-      weight: { value: p.weight_grams, unit: 'GRAMS' },
-    };
+  const item = { tracked: physical, requiresShipping: physical };
+
+  if (spec.sku) item.sku = spec.sku;
+  if (spec.cost != null) item.cost = String(spec.cost);
+  if (spec.weight_grams) {
+    item.measurement = { weight: { value: spec.weight_grams, unit: 'GRAMS' } };
   }
 
-  const input = { id: variantId, price: String(p.price), inventoryItem };
+  return item;
+}
+
+/**
+ * Pre-order and digital products must stay purchasable at zero stock,
+ * so they oversell deliberately. Everything else stops at zero.
+ */
+function inventoryPolicy(product) {
+  return product.preorder || product.inventory_policy === 'continue'
+    ? 'CONTINUE'
+    : 'DENY';
+}
+
+/** Update payload for a product's single auto-created variant. */
+function singleVariantInput(p, variantId) {
+  const input = {
+    id: variantId,
+    price: String(p.price),
+    inventoryItem: inventoryItemInput(p, p),
+    inventoryPolicy: inventoryPolicy(p),
+  };
   if (p.compare_at_price) input.compareAtPrice = String(p.compare_at_price);
+  return input;
+}
+
+/** Create payload for one entry of a multi-variant product. */
+function bulkVariantInput(p, spec, locationId) {
+  const input = {
+    optionValues: Object.entries(spec.option_values).map(([optionName, name]) => ({
+      optionName,
+      name,
+    })),
+    price: String(spec.price),
+    inventoryItem: inventoryItemInput(p, spec),
+    inventoryPolicy: inventoryPolicy(p),
+  };
+
+  if (spec.compare_at_price) input.compareAtPrice = String(spec.compare_at_price);
+
+  // Quantities can only be set where we know the location. Zero is meaningful
+  // here - pre-order variants are deliberately created empty.
+  if (locationId && spec.inventory_quantity != null && p.requires_shipping !== false) {
+    input.inventoryQuantities = [
+      { availableQuantity: spec.inventory_quantity, locationId },
+    ];
+  }
+
   return input;
 }
 
@@ -186,33 +241,84 @@ async function createProducts(client, publicationId, locationId) {
       continue;
     }
 
+    const multiVariant = Array.isArray(p.variants) && p.variants.length > 0;
+
     if (DRY_RUN) {
-      log.plan(`create "${p.title}" @ ${p.price} (sku ${p.sku})`);
+      if (multiVariant) {
+        const range = p.variants.map((v) => v.price);
+        log.plan(
+          `create "${p.title}" with ${p.variants.length} variants ` +
+          `(${Math.min(...range)}–${Math.max(...range)})`
+        );
+        for (const v of p.variants) {
+          console.log(`      ${Object.values(v.option_values).join('/')} · ${v.price} · ${v.sku}`);
+        }
+      } else {
+        log.plan(`create "${p.title}" @ ${p.price} (sku ${p.sku})`);
+      }
+      if (p.preorder) console.log(`      ${c.dim('pre-order: sells at zero stock')}`);
       created[p.handle] = `gid://dry-run/Product/${p.handle}`;
       continue;
     }
 
-    const res = await client.mutate(M_PRODUCT_CREATE, {
-      product: {
-        title: p.title,
-        handle: p.handle,
-        descriptionHtml: p.body_html,
-        productType: p.product_type,
-        vendor: p.vendor,
-        tags: p.tags,
-        status: AS_DRAFT ? 'DRAFT' : 'ACTIVE',
-      },
-    }, 'productCreate');
+    const productInput = {
+      title: p.title,
+      handle: p.handle,
+      descriptionHtml: p.body_html,
+      productType: p.product_type,
+      vendor: p.vendor,
+      tags: p.tags,
+      status: AS_DRAFT ? 'DRAFT' : 'ACTIVE',
+    };
 
+    // Declaring options up front lets us attach real variants afterwards.
+    if (multiVariant) {
+      productInput.productOptions = p.options.map((o) => ({
+        name: o.name,
+        values: o.values.map((v) => ({ name: v })),
+      }));
+    }
+
+    const res = await client.mutate(M_PRODUCT_CREATE, { product: productInput }, 'productCreate');
     const product = res.product;
-    const variant = product.variants.nodes[0];
     created[p.handle] = product.id;
 
-    // Price, SKU, cost and weight live on the variant, not the product.
-    await client.mutate(M_VARIANTS_UPDATE, {
-      productId: product.id,
-      variants: [variantInput(p, variant.id)],
-    }, 'productVariantsBulkUpdate');
+    if (multiVariant) {
+      // REMOVE_STANDALONE_VARIANT drops the placeholder variant Shopify
+      // creates automatically, leaving only the real set.
+      await client.mutate(M_VARIANTS_CREATE, {
+        productId: product.id,
+        variants: p.variants.map((v) => bulkVariantInput(p, v, locationId)),
+        strategy: 'REMOVE_STANDALONE_VARIANT',
+      }, 'productVariantsBulkCreate');
+    } else {
+      const variant = product.variants.nodes[0];
+
+      await client.mutate(M_VARIANTS_UPDATE, {
+        productId: product.id,
+        variants: [singleVariantInput(p, variant.id)],
+      }, 'productVariantsBulkUpdate');
+
+      // Stock is optional - a missing inventory scope shouldn't abort the run.
+      if (locationId && p.inventory_quantity && p.requires_shipping !== false) {
+        try {
+          await client.mutate(M_INVENTORY_SET, {
+            input: {
+              name: 'available',
+              reason: 'correction',
+              ignoreCompareQuantity: true,
+              quantities: [{
+                inventoryItemId: variant.inventoryItem.id,
+                locationId,
+                quantity: p.inventory_quantity,
+              }],
+            },
+          }, 'inventorySetQuantities');
+        } catch (err) {
+          log.warn(`${p.title}: stock not set (${err.message})`);
+        }
+      }
+    }
 
     if (publicationId) {
       await client.mutate(M_PUBLISH, {
@@ -221,28 +327,10 @@ async function createProducts(client, publicationId, locationId) {
       }, 'publishablePublish');
     }
 
-    // Stock levels are optional - a missing inventory scope shouldn't abort the run.
-    if (locationId && p.inventory_quantity && p.requires_shipping !== false) {
-      try {
-        await client.mutate(M_INVENTORY_SET, {
-          input: {
-            name: 'available',
-            reason: 'correction',
-            ignoreCompareQuantity: true,
-            quantities: [{
-              inventoryItemId: variant.inventoryItem.id,
-              locationId,
-              quantity: p.inventory_quantity,
-            }],
-          },
-        }, 'inventorySetQuantities');
-      } catch (err) {
-        log.warn(`${p.title}: stock not set (${err.message})`);
-      }
-    }
-
-    const qty = p.inventory_quantity ? ` · ${p.inventory_quantity} in stock` : '';
-    log.ok(`${p.title} - ${catalog._meta.currency} ${p.price}${qty}`);
+    const detail = multiVariant
+      ? `${p.variants.length} sizes, from ${catalog._meta.currency} ${Math.min(...p.variants.map((v) => Number(v.price)))}`
+      : `${catalog._meta.currency} ${p.price}`;
+    log.ok(`${p.title} - ${detail}${p.preorder ? c.dim(' · pre-order') : ''}`);
   }
 
   return created;
@@ -254,8 +342,8 @@ async function createCollections(client, productIds, publicationId) {
   // "Everything" holds the full catalogue; the curated ones are filled by hand.
   const membership = {
     all: catalog.products.map((p) => p.handle),
-    'start-here': ['the-ritual', 'slow-wave-protocol'],
-    instant: ['slow-wave-protocol'],
+    'the-bed': ['the-safe-space', 'the-duvet', 'the-pillow'],
+    'in-stock': ['silk-sleep-mask', 'slow-wave-protocol'],
   };
 
   for (const col of catalog.collections) {

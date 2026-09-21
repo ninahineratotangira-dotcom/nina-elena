@@ -91,3 +91,87 @@ Before any product page, ad, or social post goes live:
 - [ ] Disclaimer present on digital product
 - [ ] Shipping times stated honestly (overstating delivery speed is a Fair Trading Act breach)
 - [ ] Any "was/now" pricing reflects a genuine former price — fake RRP anchoring is specifically enforced by both the ACCC and NZ Commerce Commission
+
+---
+
+# Down & Bedding — the highest-risk claims in this store
+
+Duck down is a **specifically and actively enforced** product category. Read this section before writing a single word of duvet copy.
+
+## The enforcement record
+
+The ACCC has taken formal s.87B undertakings from multiple down suppliers over content claims:
+
+| Supplier | Claimed | Actually tested at |
+|---|---|---|
+| Downia (Australian Feather Mills) | 100% duck/goose down | **80–90%** |
+| David Jones (own brand) | 100% goose down | **88%** |
+| Industry-wide sample | 100% down | **50–90%** |
+
+Australian Feather Mills undertook to stop making *any* 100% down claim, and to make no down-percentage claim at all unless **substantiated by testing on the finished product.**
+
+**The defence that failed:** suppliers argued they relied on the percentage tolerances in the voluntary Australian Standard AS 2479. That did not prevent enforcement. Do not assume a standard's tolerance protects a marketing claim.
+
+## Hard rules for down copy
+
+- ❌ **Never write "100% down."** Not in a title, not in a spec table, not in an ad. There is no version of this sentence that is safe.
+- ❌ Never state a down percentage you cannot evidence with a **test certificate on the finished duvet** — not the supplier's raw-fill spec sheet.
+- ❌ Never state a fill power you have not had tested.
+- ✅ State the ratio your supplier certifies, exactly, with the feather portion named: **"90% duck down, 10% duck feather."** Naming the feather content is protective — it is the absence of it that gets enforced.
+- ✅ Keep the supplier's test certificate on file. If a regulator asks, that document is the entire defence.
+
+## Country-of-origin claims
+
+The ACCC has separately acted on "Product of Australia" misrepresentation (Conroys). The same exposure applies to "Made in New Zealand."
+
+- ✅ Safe: **"Filled and finished in New Zealand with New Zealand duck down."** — if true at every step
+- ⚠️ Risky: "New Zealand made" on a duvet whose down is imported and only assembled here
+- ❌ Never: "NZ made" where only the packaging is local
+
+Get the origin of **the down** and **the assembly** in writing from the supplier, separately. They are often different countries.
+
+## Ethical & environmental claims (greenwashing)
+
+Greenwashing is a current ACCC and Commerce Commission enforcement priority. Animal-welfare claims on down are squarely in scope.
+
+- ❌ "Ethically sourced" with nothing behind it — a bare adjective is the classic greenwashing finding
+- ❌ "Cruelty-free" — unverifiable and absolute
+- ❌ Implying RDS certification you do not hold. Products may only be called RDS Certified if they contain **100% RDS-certified material with chain-of-custody documentation.** There is no partial RDS.
+- ✅ State the specific, verifiable fact instead: **"A by-product of a Waikato duck farm — the down is recovered after processing, never live-plucked."** That is a checkable claim about a supply chain, not a virtue adjective.
+
+The rule is the same as for therapeutic claims: **describe the verifiable fact, not the virtue.**
+
+## Health claims on bedding
+
+Bedding attracts the same therapeutic-claims problem as the rest of the store:
+
+- ❌ "Hypoallergenic" — a health claim, and unsubstantiable on a down product
+- ❌ "Anti-allergy", "dust-mite proof", "relieves allergies"
+- ❌ "Regulates your body temperature" — physiological claim
+- ✅ "Down-proof cotton casing, tightly woven so the fill stays put"
+- ✅ "Breathable — down traps warm air rather than holding heat like a synthetic"  *(describes the material, not your body)*
+
+## Pre-order obligations
+
+Selling before stock exists is legitimate, but it is regulated:
+
+- Under the **Fair Trading Act (NZ)**, taking payment while misleading a customer about availability or delivery timing is a breach. You must have **reasonable grounds** to believe you can supply.
+- State the dispatch window **on the product page and at checkout**, not in the fine print.
+- If the window slips, tell every customer **before** it passes and offer a refund without being asked.
+- Never present a pre-order as in-stock.
+
+## Mandatory fibre labelling
+
+Every duvet sold needs a physical label stating fill composition, fill weight, casing material, size and care instructions. AS 2479 governs down and feather in Australia. Confirm the exact label wording with your supplier and keep a photo of it on file.
+
+## Down pre-publish checklist
+
+- [ ] No "100%" anywhere near the word down
+- [ ] Down/feather ratio matches the **finished-product** test certificate on file
+- [ ] Certificate obtained and stored before the listing goes live
+- [ ] Origin of down and origin of assembly both confirmed in writing
+- [ ] No bare ethical adjectives — only specific, checkable supply-chain facts
+- [ ] No RDS claim unless certified with chain of custody
+- [ ] No hypoallergenic / anti-allergy / temperature-regulation claims
+- [ ] Pre-order dispatch window stated on the product page
+- [ ] Physical fibre label confirmed

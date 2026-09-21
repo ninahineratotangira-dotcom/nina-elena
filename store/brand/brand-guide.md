@@ -6,15 +6,29 @@
 
 Short, ownable, easy to say, works as a wordmark.
 
+> **On the name:** *Slow Wave* works &mdash; slow-wave sleep is the deep restorative stage, so it is grounded without making a claim. If you want the name to carry the refuge idea more directly, **Haven**, **Eider** or **Quiet Hours** are closer to the concept; say the word and the whole build renames in one pass. Slow Wave is the default because it is more ownable and less generic than "Haven".
+
 > ⚠️ **Verify before committing:** check `slowwave.co.nz` / `slowwave.com` availability and search the IPONZ trade mark register (and IP Australia) for conflicts in class 24 (textiles) and class 35 (retail). Do not print packaging until this is cleared.
 
 ## Positioning
 
-> Most sleep brands sell you a gadget. Slow Wave sells the twenty minutes before bed.
+> A bed you don't want to get out of.
 
-The competitive insight: single sleep SKUs are commoditised and race to the bottom. A **ritual** cannot be price-matched, because the value is in the sequence, not the object. That is the moat.
+The duvet is the product. **The safe space is what it's for.**
 
-**Target customer:** 25–45, NZ/AU, works on screens, lies awake with a busy head, has already tried the apps. Buys quality over quantity. Not chasing biohacking — chasing calm.
+That distinction is the entire brand. Competitors sell fill power, thread count and GSM &mdash; a spec war you cannot win against incumbents with better buying power and a decade of reviews. Nobody lies awake wishing their duvet had more loft. They want the bed to be the one place in the house where nothing is required of them.
+
+So the product page describes specifications honestly and briefly, and everything else &mdash; the homepage, the About page, the photography &mdash; sells the refuge.
+
+**Three things make the claim credible rather than fluffy:**
+
+1. **Provenance.** A named North Island duck farm, down recovered as a by-product, never live-plucked. Safety as a concept only works if the thing itself is above board.
+2. **Made to order.** It's filled for you, over a fortnight. That is the opposite of a warehouse pallet, and it justifies the price without a discount war.
+3. **Cancel any time before it ships.** A safe space that traps your money isn't one. This line is also the single strongest answer to the pre-order trust problem.
+
+**Target customer:** 28&ndash;50, NZ/AU, owns or rents a place they care about, has just moved or just decided to stop putting up with the flat duvet from their twenties. Buys few things, well. Will pay $549 once rather than $180 three times.
+
+**What we never do:** fear-sell tiredness, imply health outcomes, or run a permanent fake sale. All three are the cheap end of this category, and two of them are illegal.
 
 ## Voice
 
@@ -25,7 +39,9 @@ Quiet, plain, a little wry. Never clinical, never wellness-guru, never shouty.
 - **Never fear-sell.** No "sleep deprivation is killing you." That is both ugly and a regulatory risk.
 - **Admit what it isn't.** Honesty converts better than hype and is safer.
 
-Tagline: **Wind down properly.**
+Tagline: **A bed you don't want to get out of.**
+
+Secondary, for the bedding itself: **Filled for you, in New Zealand.**
 
 ## Palette
 
@@ -50,10 +66,16 @@ Contrast: `--bone` on `--ink` ≈ 15.8:1, `--mute` on `--ink` ≈ 6.4:1, both cl
 
 ## Photography direction
 
-Low light, deep shadow, single warm source. Rumpled linen, not styled-flat-lay. Never a stock-photo woman smiling in white sheets at sunrise — that is the visual cliché of the entire category and signals "dropshipper" instantly.
+Low light, deep shadow, single warm source. Rumpled, lived-in, never styled-flat. Never a stock-photo woman smiling in white sheets at sunrise &mdash; that is the visual cliché of the entire category and reads as dropshipper instantly.
 
-Shot list for generated/product imagery:
-1. Mask on dark linen, single lamp, heavy shadow
-2. The full bundle laid out as a sequence, overhead, dim
-3. Detail macro — silk weave texture, shallow depth of field
-4. Hand placing the eye pillow, motion-blurred, warm lamp
+**You cannot sell a $549 duvet on supplier stock photos.** Get a sample, shoot it yourself. This is the highest-leverage $295 in the whole plan.
+
+Shot list:
+1. **The hero** &mdash; duvet thrown back, unmade, morning light from one side. It should look slept in, not staged
+2. **The weight** &mdash; someone pulling it up under their chin, face mostly out of frame
+3. **Baffle box detail** &mdash; raking light across the chambers so the construction reads
+4. **The fill** &mdash; macro of down against the cotton casing
+5. **The label** &mdash; the fill composition tag, shot close. Nobody else photographs this, and it is a trust signal precisely because it is checkable
+6. **The set** &mdash; duvet, two pillows, mask laid out on a dark bed, overhead
+
+Higgsfield can generate the atmospheric shots (rooms, light, mood) for the homepage. The **product itself must be the real sample** &mdash; generated duvet photography that doesn't match what arrives is a Fair Trading Act problem, not just a taste one.

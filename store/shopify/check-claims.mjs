@@ -36,7 +36,58 @@ const RULES = [
   { level: 'WARN',  re: /\b(boosts?|enhances?|increases?)\b/gi, why: 'Reads as a physiological claim' },
   { level: 'WARN',  re: /\bguarantee(s|d)?\b/gi, why: 'Absolute claim - Fair Trading Act exposure' },
   { level: 'WARN',  re: /\b\d+\s*%\s*(more|better|deeper|faster|longer)\b/gi, why: 'Quantified outcome needs evidence' },
+
+  // --- Down & bedding -----------------------------------------------------
+  // The ACCC has taken s.87B undertakings from Downia, David Jones and Harris
+  // Scarfe over exactly this claim. Reliance on AS 2479 tolerances did not
+  // protect them. There is no safe way to write it.
+  { level: 'BLOCK', re: /\b100\s*%\s*(pure\s+)?(duck\s+|goose\s+|white\s+|grey\s+|gray\s+)?down\b/gi, why: 'ACCC-enforced: no "100% down" claim, ever' },
+  { level: 'BLOCK', re: /\bpure\s+down\b/gi, why: 'Reads as a 100% content claim' },
+  { level: 'BLOCK', re: /\bhypo[- ]?allergenic\b/gi, why: 'Health claim, unsubstantiable on down' },
+  { level: 'BLOCK', re: /\b(anti[- ]allerg\w*|dust[- ]mite)\b/gi, why: 'Health claim' },
+  { level: 'BLOCK', re: /\bcruelty[- ]free\b/gi, why: 'Unverifiable absolute claim (greenwashing)' },
+  { level: 'BLOCK', re: /\bregulates?\s+(your\s+)?(body\s+)?temperature\b/gi, why: 'Physiological claim' },
+  { level: 'WARN',  re: /\bRDS\b|\bResponsible Down Standard\b/gi, why: 'Only if certified with chain of custody - no partial RDS' },
+  { level: 'WARN',  re: /\bethically\s+sourced\b/gi, why: 'Bare ethical adjective - state the checkable fact instead' },
+  { level: 'WARN',  re: /\bsustainabl\w*|\beco[- ]friendly\b/gi, why: 'Greenwashing exposure - substantiate or cut' },
+  { level: 'WARN',  re: /\bfill\s*power\b|\b\d{3,4}\s*(fp|loft)\b/gi, why: 'Fill power must be tested, not taken from a spec sheet' },
+  { level: 'WARN',  re: /\b(made|manufactured|filled|finished|assembled)\s+(?:and\s+\w+\s+)?in\s+new\s+zealand\b|\bnz[- ]made\b/gi, why: 'Country-of-origin claim - confirm down origin AND assembly separately' },
+  { level: 'WARN',  re: /\b\d{2,3}\s*%\s+(?:[\w-]+\s+){0,3}(down|feathers?)(?!\s*-?\s*proof)\b/gi, why: 'Needs a finished-product test certificate on file' },
 ];
+
+/**
+ * Structural checks that aren't about phrasing.
+ * Under the Fair Trading Act, a pre-order must state its dispatch window
+ * on the product page - not in the fine print, and not only at checkout.
+ */
+function structuralChecks(catalog) {
+  const issues = [];
+
+  for (const p of catalog.products ?? []) {
+    if (!p.preorder) continue;
+
+    const text = strip(p.body_html ?? '');
+    const statesWindow = /\b\d+\s*(?:-|–|\s+to\s+)\s*\d+\s*(working\s+)?days?\b/i.test(text);
+
+    if (!statesWindow) {
+      issues.push({
+        handle: p.handle,
+        level: 'BLOCK',
+        why: 'Pre-order product does not state a dispatch window (Fair Trading Act)',
+      });
+    }
+
+    if (/\bin\s+stock\b/i.test(text)) {
+      issues.push({
+        handle: p.handle,
+        level: 'BLOCK',
+        why: 'Pre-order product describes itself as in stock',
+      });
+    }
+  }
+
+  return issues;
+}
 
 const SOURCES = [
   { file: '../products/catalog.json', fields: ['title', 'body_html'], list: 'products' },
@@ -44,7 +95,22 @@ const SOURCES = [
   { file: '../content/pages.json', fields: ['title', 'body_html'], list: 'pages' },
 ];
 
-const strip = (html) => String(html).replace(/<[^>]+>/g, ' ').replace(/&[a-z]+;/gi, ' ');
+/**
+ * HTML entities must be decoded, not blanked: "10&ndash;15 working days"
+ * blanked to "10 15 working days" loses the range and defeats the
+ * dispatch-window check.
+ */
+const ENTITIES = {
+  ndash: '\u2013', mdash: '\u2014', amp: '&', nbsp: ' ',
+  quot: '"', apos: "'", lsquo: '\u2018', rsquo: '\u2019',
+  ldquo: '\u201c', rdquo: '\u201d', hellip: '\u2026',
+  lt: '<', gt: '>',
+};
+
+const strip = (html) =>
+  String(html)
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&([a-z]+);/gi, (m, name) => ENTITIES[name.toLowerCase()] ?? ' ');
 
 /**
  * Some blocked words are legitimate in specific legal contexts:
@@ -98,6 +164,17 @@ for (const src of SOURCES) {
         console.log(`    ${tag}  "${f.match}" — ${f.why}`);
       }
     }
+  }
+}
+
+// Structural (non-phrasing) checks.
+{
+  const catalog = JSON.parse(readFileSync(join(__dirname, '../products/catalog.json'), 'utf8'));
+  const issues = structuralChecks(catalog);
+  for (const i of issues) {
+    console.log(`\n  ${i.handle}`);
+    console.log(`    \x1b[31mBLOCK\x1b[0m  ${i.why}`);
+    blocks++;
   }
 }
 

@@ -1,104 +1,106 @@
 # Store Strategy — Research-Backed Build Plan
 
-**Constraints this plan was built around:** starting budget under NZ$500 · market New Zealand / Australia · platform Shopify · category health / beauty / wellness.
+**Constraints:** starting budget under NZ$500 · market New Zealand / Australia · platform Shopify · product **duck down duvets, sold as a safe space.**
 
-Every recommendation below traces to a source in `sources.md`. Where a number is modelled rather than measured, it is labelled **[modelled]** — verify before committing money.
+Numbers labelled **[modelled]** are estimates, not quotes. Verify before committing money. Everything else traces to `sources.md`.
 
 ---
 
-## 1. The niche: sleep, not supplements
+## 1. The concept
 
-Within wellness, sleep is the standout sub-category going into 2026:
+> A bed you don't want to get out of.
 
-| Signal | Value | Source |
-|---|---|---|
-| Mouth-taping monthly searches | 669,000 (+133% YoY) | Glimpse / Google Trends |
-| Sleep-hygiene tools, YoY growth | +134% | Glimpse |
-| Sleep & wellness search interest vs early 2024 | +285% | Glimpse |
-| Global sleep market 2026 → 2034 | $70.0B → $115.0B (6.4% CAGR) | Straits Research |
-| US sleep-tech CAGR | 12.5% | Sourceready |
+The duvet is the product. The safe space is what it's for. That distinction is the whole brand — competitors sell fill power and thread count, which is a spec war you cannot win against incumbents with better buying power.
 
-**Why sleep beats the other wellness options for this budget:**
+The sleep category supports this: sleep-hygiene tools are up **+134% YoY**, sleep and wellness search interest is up **285%** since early 2024, and the global sleep market runs $70.0B (2026) → $115.0B (2034). But unlike the accessory end of that market, premium bedding is **not** commoditised by TikTok dropshippers, because the unit economics and shipping weight keep them out.
 
-- **Supplements / ingestibles** — best raw margins (60–85%) but they are regulated therapeutic goods in both NZ (Medsafe) and AU (TGA). Compliance cost alone exceeds the entire budget.
-- **Private-label skincare** — needs NZ$8,000–16,000 realistically (US$5–10k minimum), MOQs of 1,000–3,000 per SKU, and margins are actually *lower* than expected at 45–55%.
-- **Sleep accessories** — high margin, strong repeat purchase, explosive trend growth, and critically: **you are selling objects, not physiological claims.** Textiles and sleep environment goods sit outside the therapeutic-goods regime entirely, provided the marketing stays disciplined (see `01-compliance-nz-au.md`).
+That barrier works in your favour. It is also the barrier you have to solve.
 
-## 2. The trap to avoid
+## 2. The three problems, and how each is solved
 
-Do **not** build the store around mouth tape, despite it being the highest-growth search term.
+### Problem 1: $500 does not buy duvets
+A queen down duvet costs NZ$250–350 wholesale **[modelled]**. Your entire budget buys roughly **two.**
 
-1. **It is a regulated product in Australia.** Nasal-breathing mouth tape is listed on the ARTG (Betta Sleep Limited, ARTG 491427). The TGA defines therapeutic goods as products "influencing, inhibiting or modifying a physiological process" — the exact claim mouth tape sells on. Selling into AU with those claims means registration you cannot afford.
-2. **It is already commoditised.** Nasalite alone moves >1.7M units/month on TikTok Shop. A new entrant competing on an undifferentiated SKU against that volume competes on price, and loses.
+**Solution: sell on pre-order, fill to order.** The customer pays, then you buy. This inverts working capital — instead of $500 of stock sitting unsold, each sale funds its own cost. It is how small bedding brands actually launch, and it is legitimate provided the dispatch window is disclosed honestly (see `01-compliance-nz-au.md`).
 
-The winning structure is not a product. It is a **ritual** — a branded sequence of objects sold as a system, where the bundle is the moat and no single SKU can be price-matched.
+The store is configured for this: duvet, pillow and bundle variants are created with stock at zero and `inventoryPolicy: CONTINUE`, so they remain purchasable. No pre-order app required.
 
-## 3. Business model for a sub-$500 start
+### Problem 2: importing down into NZ is a biosecurity process
+Feather and down are animal products. MPI requires the relevant **Import Health Standard** to be met, which can mean veterinary certification that the fibre is disease-free or processed in a specified way. For a first-time importer this is cost, delay, and a real chance of a held consignment.
 
-The core problem: NZ/AU is a **shipping-time trap.** International (Asian) suppliers take 2–4 weeks to reach NZ. That kills conversion and generates refunds. NZ-based suppliers deliver in 2–5 days, AU-based in 5–10.
+**Solution: buy domestically.** **Feathers & Co** (Waikato) produce the only New Zealand duck feathers on the market, as a by-product of their duck farm — they supply My Sanctuary. **Eiderdown / Z Land Bedding** manufacture down duvets in New Zealand.
 
-So the model is a **three-tier stack**, ordered by how much cash each requires:
+Buying from a NZ filler removes the import problem completely, cuts lead time, and hands you a genuine provenance story instead of a claimed one. **This is the single most important sourcing decision in the plan.**
 
-### Tier 1 — Digital (launch first, margin engine)
-The *Slow Wave Protocol* — a sleep-environment guide sold as a download.
-- Unit cost: **$0**. Margin: **~97%** after payment fees.
-- No shipping, no inventory, no customs, no regulatory exposure (education, not treatment).
-- Ships instantly, which means it converts cold traffic while physical stock is still in transit.
-- **This funds tier 2.** Every digital sale is roughly the gross profit of two physical sales with none of the risk.
+### Problem 3: down content claims are actively prosecuted
+The ACCC has taken s.87B undertakings from **Downia, David Jones and Harris Scarfe** over "100% down" claims — testing found 50–90% actual down content. Their defence, that AS 2479 tolerances permitted it, **failed.**
 
-### Tier 2 — Print-on-demand (zero inventory)
-Via **Gelato**, which prints locally in New Zealand — ~90% of orders produced in-country, averaging **3-day delivery**.
-- Unit cost paid only after the customer pays. **Zero capital tied up.**
-- Suits: pillowcases, sleep-ritual wall prints, tote/packaging extras.
-- Margins thinner (~35–45% **[modelled]**) but risk is literally zero.
+**Solution:** never claim 100% down; state the ratio your supplier certifies **on the finished product**, name the feather portion, and keep the certificate. `npm run check` blocks the phrase automatically. Full rules in `01-compliance-nz-au.md`.
 
-### Tier 3 — Small-batch hero stock (the brand)
-One or two physical SKUs bought in small quantity (~NZ$300) and shipped from home via NZ Post.
-- Silk sleep mask and weighted eye pillow — textiles, non-regulated, high perceived value, light (cheap to post).
-- This is where the 60–80% margins live.
+## 3. Unit economics [modelled — replace with supplier quotes]
 
-**Budget allocation [modelled]:**
+Payment processing modelled at 2.9% + $0.30.
+
+| SKU | Cost | Retail | Gross profit | Margin |
+|---|---|---|---|---|
+| The Slow Wave Protocol (digital) | 0 | 29 | 27.86 | 96% |
+| The Silk Mask | 5.50 | 49 | 42.08 | 86% |
+| The Pillow | 62 | 129 | 63.16 | 49% |
+| The Duvet — Queen | 295 | 549 | 238.78 | 43% |
+| The Duvet — King | 350 | 649 | 280.08 | 43% |
+| **The Safe Space — Queen** | 424 | 749 | 303.02 | 40% |
+
+Bedding margins are structurally lower than accessories — 40–50%, not 80%. That is normal for the category and it is fine, because the **absolute profit per order is 6–10× higher.** One Safe Space sale nets more than eleven silk masks.
+
+**Break-even:** Shopify Basic is roughly NZ$44/month. That is **one duvet sale every two months**, or two mask sales. The fixed costs are not the risk here.
+
+## 4. Budget allocation [modelled]
 
 | Line | Amount (NZ$) |
 |---|---|
-| Hero stock (~100 units, 2 SKUs) | 300 |
+| Silk masks — 40 units, in-stock trust builder | 220 |
 | Domain (1 yr) | 30 |
 | Shopify Basic (promo rate, first 3 mo) | 5 |
-| Working buffer / first ad test | 165 |
+| Supplier sample — one duvet, to photograph and verify | 0* |
+| Working buffer / first ad test | 245 |
 | **Total** | **500** |
 
-Shopify Basic reverts to roughly NZ$44/month after any promotional period — the store needs to clear that before it is profitable. At the modelled hero margin, that is **two sales a month.**
+\* Ask the supplier for a sample at cost or on consignment. If you must buy one outright (~$295), it comes out of the buffer and you shoot the photography yourself. **You cannot sell a $549 duvet using the supplier's stock photos** — that reads as dropshipping and kills the premium position.
 
-## 4. Unit economics [modelled — verify supplier quotes]
+## 5. The real risk, stated plainly
 
-Assumes small-batch sourcing at ~100 units/SKU. Payment processing modelled at 2.9% + $0.30.
+**Nobody pre-orders a $549 duvet from a brand with no reviews.**
 
-| SKU | Landed cost | Retail | Gross profit | Margin |
-|---|---|---|---|---|
-| Slow Wave Protocol (digital) | 0.00 | 29.00 | 27.86 | 96% |
-| Silk sleep mask | 5.50 | 49.00 | 42.08 | 86% |
-| Weighted eye pillow | 9.00 | 69.00 | 57.70 | 84% |
-| POD pillowcase (Gelato) | 28.00 | 59.00 | 29.99 | 51% |
-| **The Ritual bundle** (mask + pillow + protocol) | 14.50 | 119.00 | 101.05 | 85% |
+This is the central problem of the whole plan, and no amount of good copy fixes it directly. A pre-order asks for high trust and gives nothing back for two weeks. From an unknown store, the conversion rate on cold traffic will be close to zero.
 
-The bundle is the product that matters. It raises average order value ~2.4× over a single mask sale while cutting per-order shipping cost, and it cannot be price-compared against any competitor SKU.
+So the store is built as a **trust ladder**, cheapest first:
 
-**Benchmark check:** these sit above the ecommerce median gross margin of 42.8% and inside the 60–80% band reported for wellness. The target floor for any SKU is 40%; the POD line is the only one near it, which is why it is a support SKU and not the hero.
+| Step | Product | Price | What it buys you |
+|---|---|---|---|
+| 1 | The Slow Wave Protocol | $29 | An email address, and a buyer who has now paid you once |
+| 2 | The Silk Mask | $49 | A real delivery, a real product in hand, a review |
+| 3 | The Duvet / Safe Space | $429–849 | The actual business |
 
-## 5. Launch sequence
+The masks are in stock and ship next day precisely so that steps 1 and 2 generate **reviews and an email list before anyone is asked for $549.** They are not really products — they are the proof that you ship.
 
-1. **Week 1** — Store live with the digital product only. Zero inventory risk. Validates whether the positioning converts before any stock is bought.
-2. **Week 2** — Order hero stock only if tier 1 shows traffic converting. Add Gelato POD SKUs (still zero capital).
-3. **Week 3–4** — Hero stock arrives, bundle goes live, shift promotion to the bundle.
+Nobody buys the duvet first. Plan for that.
 
-The point of this ordering: **you find out if anyone wants this before you spend the $300.** Most first stores fail by buying stock for a positioning that was never tested.
+## 6. Launch sequence
 
-## 6. Honest risk register
+1. **Week 1** — Store live. Digital guide + silk masks only. Duvet listed but marked pre-order. Zero inventory risk beyond the masks.
+2. **Week 2–3** — Get a supplier sample. Shoot real photography. Collect the first reviews from mask buyers.
+3. **Week 4** — Confirm the down ratio in writing and get the finished-product test certificate. Push the duvet only once you have reviews on the wall.
+4. **Ongoing** — Every duvet order is filled to order and funds itself.
+
+## 7. Risk register
 
 | Risk | Severity | Mitigation |
 |---|---|---|
-| Marketing drifts into therapeutic claims | **High** — this is the one that brings regulators | `01-compliance-nz-au.md` defines banned phrases; copy in `content/` is pre-vetted |
-| No traffic — store launches into silence | **High** — the most common cause of failure | Digital-first launch tests demand before stock spend |
-| Supplier quality on unseen small-batch stock | Medium | Order samples before the 100-unit buy |
-| NZ/AU market is small | Medium | Real constraint. Offset by far lower ad costs than US |
-| Shopify fees outrun revenue | Low | Break-even is ~2 sales/month |
+| Nobody pre-orders from an unknown brand | **High** — the core risk | Trust ladder: guide → mask → duvet. Reviews before the ask |
+| Down content claim breaches ACL/FTA | **High** — actively enforced | Never "100% down"; test certificate on file; `npm run check` gates it |
+| Supplier can't meet the 10–15 day window | **High** — pre-order slippage is a Fair Trading Act breach | Confirm lead time in writing; notify and refund before the window passes |
+| Using supplier stock photos | Medium | Kills the premium position. Shoot the sample yourself |
+| Origin claim wrong ("NZ made") | Medium | Confirm down origin and assembly separately, in writing |
+| Shipping cost on a 1.8kg bulky item | Medium | Price shipping into the retail price; quote real courier rates |
+| Returns on a used duvet | Medium | Hygiene exclusion stated up front; faulty-goods rights unaffected |
+| NZ/AU market is small | Low–Med | Real constraint, offset by far lower ad costs than the US |
