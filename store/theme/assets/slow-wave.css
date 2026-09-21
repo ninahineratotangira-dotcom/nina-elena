@@ -1,0 +1,242 @@
+/* ==========================================================================
+   Slow Wave — brand layer for Shopify Dawn
+   --------------------------------------------------------------------------
+   Dark-first. A sleep brand that blinds the visitor with a white screen has
+   failed before they've read anything.
+
+   Install:
+     1. Online Store > Themes > ... > Edit code
+     2. Assets > Add a new asset > upload this file
+     3. In layout/theme.liquid, immediately before </head>, add:
+          {{ 'slow-wave.css' | asset_url | stylesheet_tag }}
+     4. Settings > Typography: Headings = Fraunces, Body = Inter
+   ========================================================================== */
+
+:root {
+  --sw-ink:       #0F1420;
+  --sw-ink-soft:  #1A2030;
+  --sw-bone:      #F4F1EA;
+  --sw-dusk:      #5B6B9E;
+  --sw-ember:     #C9A227;
+  --sw-mute:      #8A93A8;
+  --sw-line:      rgba(244, 241, 234, 0.12);
+
+  --sw-measure:   64ch;
+  --sw-ease:      cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Dawn reads these for most surfaces. */
+  --color-background: 15 20 32;
+  --color-foreground: 244 241 234;
+}
+
+body,
+.shopify-section,
+.color-background-1,
+.color-background-2,
+.color-inverse,
+.color-scheme-1,
+.color-scheme-2 {
+  background-color: var(--sw-ink);
+  color: var(--sw-bone);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.005em;
+  line-height: 1.65;
+}
+
+/* -------------------------------------------------------------- typography */
+
+h1, h2, h3,
+.h0, .h1, .h2, .h3 {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--sw-bone);
+  text-wrap: balance;
+}
+
+h1, .h0 { font-size: clamp(2.25rem, 6vw, 4rem); }
+h2, .h1 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
+
+/* Long-form copy shouldn't run the full width of a desktop screen. */
+.rte, .product__description {
+  max-width: var(--sw-measure);
+}
+
+.rte p + p { margin-top: 1.1em; }
+
+.rte h3,
+.product__description h3 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  font-size: 1.05rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sw-mute);
+}
+
+.rte ul, .product__description ul {
+  padding-left: 1.1em;
+  list-style: none;
+}
+
+.rte li, .product__description li {
+  position: relative;
+  margin-bottom: 0.45em;
+}
+
+.rte li::before,
+.product__description li::before {
+  content: '';
+  position: absolute;
+  left: -1.1em;
+  top: 0.72em;
+  width: 0.45em;
+  height: 1px;
+  background: var(--sw-dusk);
+}
+
+/* The mandated medical disclaimer — present, legible, not shouting. */
+.product__description em:last-child {
+  display: block;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--sw-line);
+  font-size: 0.8125rem;
+  font-style: normal;
+  line-height: 1.5;
+  color: var(--sw-mute);
+}
+
+/* ------------------------------------------------------------------ chrome */
+
+.header {
+  background: var(--sw-ink);
+  border-bottom: 1px solid var(--sw-line);
+}
+
+.header__heading-link,
+.header__menu-item {
+  color: var(--sw-bone);
+  letter-spacing: 0.02em;
+}
+
+.header__heading-link {
+  font-family: 'Fraunces', serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footer {
+  background: var(--sw-ink-soft);
+  border-top: 1px solid var(--sw-line);
+  color: var(--sw-mute);
+}
+
+a { color: var(--sw-dusk); text-underline-offset: 0.2em; }
+a:hover { color: var(--sw-bone); }
+
+/* ---------------------------------------------------------------- buttons */
+
+.button,
+.shopify-payment-button__button--unbranded {
+  background: var(--sw-ember);
+  color: var(--sw-ink);
+  border: none;
+  border-radius: 2px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.04em;
+  padding: 1.05rem 2rem;
+  transition: transform 0.25s var(--sw-ease), filter 0.25s var(--sw-ease);
+}
+
+.button:hover,
+.shopify-payment-button__button--unbranded:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--sw-bone);
+  border: 1px solid var(--sw-line);
+}
+
+.button--secondary:hover {
+  background: var(--sw-ink-soft);
+  filter: none;
+}
+
+/* ----------------------------------------------------------------- product */
+
+.price,
+.price-item--regular {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  color: var(--sw-bone);
+}
+
+.price--on-sale .price-item--regular {
+  font-size: 1rem;
+  color: var(--sw-mute);
+  text-decoration-thickness: 1px;
+}
+
+.price__sale .price-item--sale { color: var(--sw-ember); }
+
+.card__inner,
+.card--standard .card__inner {
+  background: var(--sw-ink-soft);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.card__media img {
+  transition: transform 0.7s var(--sw-ease);
+}
+
+.card:hover .card__media img {
+  transform: scale(1.03);
+}
+
+.card__heading a {
+  font-family: 'Fraunces', serif;
+  color: var(--sw-bone);
+  text-decoration: none;
+}
+
+/* ------------------------------------------------------------ accessibility */
+
+*:focus-visible {
+  outline: 2px solid var(--sw-ember);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Respect a visitor who has explicitly asked for a light interface. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-sw-force-dark]) {
+    --sw-ink:      #FBFAF7;
+    --sw-ink-soft: #F1EEE7;
+    --sw-bone:     #171C28;
+    --sw-mute:     #5A6274;
+    --sw-line:     rgba(23, 28, 40, 0.14);
+    --color-background: 251 250 247;
+    --color-foreground: 23 28 40;
+  }
+}

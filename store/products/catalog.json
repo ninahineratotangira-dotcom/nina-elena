@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "brand": "Slow Wave",
+    "currency": "NZD",
+    "note": "Prices are ex-GST-inclusive retail. Shopify NZ stores typically show GST-inclusive pricing. Cost fields are modelled estimates - replace with real supplier quotes before ordering.",
+    "compliance": "All copy vetted against strategy/01-compliance-nz-au.md. Do not edit descriptions without re-running that checklist."
+  },
+  "products": [
+    {
+      "handle": "slow-wave-protocol",
+      "title": "The Slow Wave Protocol",
+      "product_type": "Digital Guide",
+      "vendor": "Slow Wave",
+      "tags": ["digital", "guide", "instant-download", "tier-1"],
+      "requires_shipping": false,
+      "price": "29.00",
+      "cost": "0.00",
+      "sku": "SW-PROTO-01",
+      "inventory_policy": "continue",
+      "body_html": "<p>A 34-page guide to the twenty minutes before bed.</p><p>Not an app. Not a tracker. No notifications. Just a clear, practical walkthrough of how to set up a room and an evening routine that actually lets you switch off &mdash; written for people who have already tried the apps and are still lying there at 1am.</p><h3>What's inside</h3><ul><li>The room audit &mdash; light, temperature, sound, and the four things most bedrooms get wrong</li><li>A 20-minute wind-down sequence you can actually stick to</li><li>The screen problem, and what to do if giving them up isn't realistic</li><li>Building a routine that survives a bad week</li><li>Two printable one-page checklists</li></ul><h3>Format</h3><p>PDF, delivered by email the moment you order. Read it on anything.</p><p><em>This guide is general educational information about sleep environment and routine. It is not medical advice, and it is not intended to diagnose, treat, cure or prevent any condition. If you have ongoing sleep difficulties, please speak to your doctor.</em></p>"
+    },
+    {
+      "handle": "silk-sleep-mask",
+      "title": "The Silk Mask",
+      "product_type": "Sleep Mask",
+      "vendor": "Slow Wave",
+      "tags": ["hero", "textile", "tier-3"],
+      "requires_shipping": true,
+      "price": "49.00",
+      "cost": "5.50",
+      "sku": "SW-MASK-01",
+      "weight_grams": 45,
+      "inventory_quantity": 100,
+      "body_html": "<p>Blocks all of the light. That's the whole job, and most masks don't do it.</p><p>Cheap masks leak light at the bridge of the nose. This one is contoured there, so the seal holds when you turn over. Mulberry silk on both faces &mdash; cool against the skin, and it doesn't drag at the corners of your eyes the way cotton does.</p><h3>Specifications</h3><ul><li>22-momme mulberry silk, both sides</li><li>Contoured nose seal &mdash; blocks 100% of light</li><li>Adjustable flat-back strap, no lump against the pillow</li><li>45g</li><li>Hand wash cold, dry flat</li></ul><h3>Made for</h3><p>Light sleepers. Shift workers. Anyone whose partner reads late. Anyone who has given up on the streetlight outside.</p>"
+    },
+    {
+      "handle": "weighted-eye-pillow",
+      "title": "The Weighted Eye Pillow",
+      "product_type": "Eye Pillow",
+      "vendor": "Slow Wave",
+      "tags": ["hero", "textile", "tier-3"],
+      "requires_shipping": true,
+      "price": "69.00",
+      "cost": "9.00",
+      "sku": "SW-PILLOW-01",
+      "weight_grams": 300,
+      "inventory_quantity": 60,
+      "body_html": "<p>280 grams across the eyes. Heavier than you expect, which is the point.</p><p>A gentle, even weight that settles the face at the end of the day. Linen outer, flaxseed fill, no fragrance &mdash; scented versions tend to be overwhelming twenty minutes in, so this one is deliberately plain.</p><h3>Specifications</h3><ul><li>280g flaxseed fill, evenly chambered so it doesn't pool to one side</li><li>Washed linen cover, removable</li><li>Unscented</li><li>Can be chilled &mdash; 20 minutes in the fridge, not the freezer</li><li>Cover machine washable, inner spot clean only</li></ul><h3>Made for</h3><p>The end of a long screen day. Use it for ten minutes before bed, not through the night.</p>"
+    },
+    {
+      "handle": "slow-wave-pillowcase",
+      "title": "The Pillowcase",
+      "product_type": "Pillowcase",
+      "vendor": "Slow Wave",
+      "tags": ["pod", "textile", "tier-2", "gelato"],
+      "requires_shipping": true,
+      "price": "59.00",
+      "cost": "28.00",
+      "sku": "SW-CASE-01",
+      "weight_grams": 180,
+      "inventory_policy": "continue",
+      "body_html": "<p>Printed and sewn in New Zealand, usually on your doorstep within a few days.</p><p>Standard size, soft-finish cotton sateen, in the same deep ink as everything else we make. Envelope closure, so nothing works its way out overnight.</p><h3>Specifications</h3><ul><li>Cotton sateen, soft finish</li><li>Standard 48 x 74cm</li><li>Envelope closure</li><li>Printed on demand in NZ &mdash; made after you order, so nothing sits in a warehouse</li><li>Machine wash cold, tumble dry low</li></ul>"
+    },
+    {
+      "handle": "the-ritual",
+      "title": "The Ritual — Complete Set",
+      "product_type": "Bundle",
+      "vendor": "Slow Wave",
+      "tags": ["bundle", "hero", "best-value"],
+      "requires_shipping": true,
+      "price": "119.00",
+      "compare_at_price": "147.00",
+      "cost": "14.50",
+      "sku": "SW-RITUAL-01",
+      "weight_grams": 360,
+      "inventory_quantity": 50,
+      "body_html": "<p>The whole thing, in the order you'd actually use it.</p><p>The Silk Mask, the Weighted Eye Pillow, and The Slow Wave Protocol &mdash; bought together, because individually they're objects, and together they're a routine. The guide arrives by email straight away; the rest ships the next working day.</p><h3>What's included</h3><ul><li><strong>The Silk Mask</strong> &mdash; 22-momme mulberry silk, contoured nose seal ($49)</li><li><strong>The Weighted Eye Pillow</strong> &mdash; 280g flaxseed, washed linen ($69)</li><li><strong>The Slow Wave Protocol</strong> &mdash; 34-page guide, instant download ($29)</li></ul><p>$147 bought separately. $119 together.</p><h3>Why a set</h3><p>Because one object doesn't change an evening. A sequence does. The guide tells you the order; the other two are what you do it with.</p>"
+    }
+  ],
+  "collections": [
+    {
+      "handle": "all",
+      "title": "Everything",
+      "body_html": "<p>Four things. That's deliberate.</p>"
+    },
+    {
+      "handle": "start-here",
+      "title": "Start Here",
+      "body_html": "<p>New to this? The Ritual set is the whole routine in one go. If you'd rather test the water, start with the guide.</p>"
+    },
+    {
+      "handle": "instant",
+      "title": "Instant Download",
+      "body_html": "<p>Delivered by email the moment you order. Nothing to wait for.</p>"
+    }
+  ]
+}
