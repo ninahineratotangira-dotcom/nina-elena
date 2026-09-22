@@ -68,39 +68,79 @@ Quiet, plain, a little wry. Never clinical, never wellness-guru, never shouty.
 
 Taglines live in their own section above. For the bedding specifically, the supporting line is: **Filled for you, in New Zealand.**
 
+## Design direction
+
+**Elegant, minimal, light.** The restraint *is* the luxury signal. Competing brands in this category reach for gold foil and moody darkness; the expensive-looking ones do the opposite — warm off-white, enormous whitespace, hairlines instead of cards, and an accent used almost never.
+
+Four rules carry the whole look:
+
+1. **Space over ornament.** Section padding is generous to the point of feeling excessive on a laptop. Crowding is what reads as cheap.
+2. **Hairlines, not boxes.** Cards, borders, shadows and rounded corners are all removed from Dawn. A 1px rule at 10% opacity does the separating.
+3. **Two text tones only.** Ink and stone. A third tone is a decision you don't need to make.
+4. **No pure black, no pure white.** `#000` and `#FFF` read as clinical. Everything is warmed slightly.
+
 ## Palette
 
-Dark-first — a sleep brand that blinds you with a white screen has failed at the first hurdle.
+Light by default, with a warm dark mode for late browsing.
 
-| Token | Hex | Use |
-|---|---|---|
-| `--ink` | `#0F1420` | Background (primary) |
-| `--ink-soft` | `#1A2030` | Cards, raised surfaces |
-| `--bone` | `#F4F1EA` | Primary text on dark |
-| `--dusk` | `#5B6B9E` | Accent, links |
-| `--ember` | `#C9A227` | CTA, price, sparingly |
-| `--mute` | `#8A93A8` | Secondary text |
+| Token | Light | Dark | Use |
+|---|---|---|---|
+| `--msp-linen` | `#FAF8F5` | `#151412` | Page background |
+| `--msp-porcelain` | `#F3EFE9` | `#1E1C19` | Image wells, raised areas |
+| `--msp-ink` | `#1B1917` | `#F2EEE8` | Headings, body, buttons |
+| `--msp-stone` | `#6E675E` | `#A49B90` | Secondary text, captions, nav |
+| `--msp-faint` | `#847C70` | `#7C746A` | **Large text only** — never body |
+| `--msp-clay` | `#9A6F4F` | `#C08F66` | Focus ring and sale price. Nothing else |
 
-Contrast: `--bone` on `--ink` ≈ 15.8:1, `--mute` on `--ink` ≈ 6.4:1, both clearing WCAG AA.
+**Contrast, measured not guessed:**
+
+| Pair | Light | Dark | |
+|---|---|---|---|
+| ink on linen | **16.5:1** | **15.9:1** | AA body ✓ |
+| stone on linen | **5.3:1** | **6.7:1** | AA body ✓ |
+| faint on linen | 3.9:1 | 4.0:1 | AA large only — restricted in CSS |
+
+An earlier candidate for `faint` (`#9C948A`) tested at 2.82:1 and was rejected. If you add a tone, measure it — a palette that fails AA is a legal accessibility exposure as well as an ugly one.
 
 ## Type
 
-- Headings: **Fraunces** or **Instrument Serif** — warmth, editorial, not corporate
-- Body: **Inter** — neutral, highly legible at small sizes
-- Both free on Google Fonts, both load fast
+| Role | Face | Weight |
+|---|---|---|
+| Display | **Cormorant Garamond** | 300 |
+| Body & UI | **Jost** | 300 / 400 / 500 |
+
+Both free on Google Fonts. Cormorant at 300 is delicate and high-contrast — beautiful large, unreadable small, so it is used **only** for headings, prices and product names. Jost carries everything else: geometric, slightly fashion-adjacent, quiet.
+
+**The micro-label** does more work than any other element. Small, uppercase, letter-spaced to `0.22em`, in stone — used for section eyebrows and spec headings (`.msp-label`). It is the single detail that makes a page read as considered rather than templated.
+
+**Specification lists are hairline-separated rows, not bullets.** Bullets are a catalogue convention; rules read as a spec sheet, which is what a $549 purchase wants.
+
+## Preview
+
+`theme/preview.html` renders the whole system standalone — lockup, product grid, product page, palette, dark mode toggle. Rebuild it after any CSS change:
+
+```bash
+cd store/theme && node build-preview.mjs
+```
 
 ## Photography direction
 
-Low light, deep shadow, single warm source. Rumpled, lived-in, never styled-flat. Never a stock-photo woman smiling in white sheets at sunrise &mdash; that is the visual cliché of the entire category and reads as dropshipper instantly.
+Light, soft, unhurried. **Daylight, not lamplight** — the old dark-brand direction (deep shadow, single warm source) would fight the theme and read as moody rather than expensive.
 
-**You cannot sell a $549 duvet on supplier stock photos.** Get a sample, shoot it yourself. This is the highest-leverage $295 in the whole plan.
+- **Overexposed rather than underexposed.** Soft north-facing window light, bright shadows, nothing crushed to black.
+- **Linen, not satin.** Texture reads as quality; sheen reads as polyester.
+- **Rumpled, not styled.** Made-but-lived-in. A perfectly smoothed bed looks like a showroom; a slightly thrown-back duvet looks like somewhere someone sleeps.
+- **Negative space is the composition.** Let the duvet occupy a third of the frame. This is the single biggest difference between a $99 look and a $549 look.
+- **Never** the category cliché: a smiling woman in white sheets at sunrise, arms stretched overhead. It signals dropshipper instantly.
+
+**You cannot sell a $549 duvet on supplier stock photos.** Get a sample and shoot it. This is the highest-leverage spend in the whole plan.
 
 Shot list:
-1. **The hero** &mdash; duvet thrown back, unmade, morning light from one side. It should look slept in, not staged
-2. **The weight** &mdash; someone pulling it up under their chin, face mostly out of frame
-3. **Baffle box detail** &mdash; raking light across the chambers so the construction reads
-4. **The fill** &mdash; macro of down against the cotton casing
-5. **The label** &mdash; the fill composition tag, shot close. Nobody else photographs this, and it is a trust signal precisely because it is checkable
-6. **The set** &mdash; duvet, two pillows, mask laid out on a dark bed, overhead
+1. **The hero** — duvet thrown back, unmade, soft side light. Slept in, not staged
+2. **The weight** — pulled up under a chin, face mostly out of frame
+3. **Baffle box detail** — raking light across the chambers so the construction reads
+4. **The fill** — macro of down against cotton
+5. **The label** — the fill composition tag, shot close. Nobody else photographs this, and it is a trust signal precisely because it is checkable
+6. **The set** — duvet, two pillows, mask laid out, overhead, on linen
 
-Higgsfield can generate the atmospheric shots (rooms, light, mood) for the homepage. The **product itself must be the real sample** &mdash; generated duvet photography that doesn't match what arrives is a Fair Trading Act problem, not just a taste one.
+Higgsfield can generate the atmospheric and room shots for the homepage. The **product itself must be the real sample** — generated duvet photography that doesn't match what arrives is a Fair Trading Act problem, not just a taste one.

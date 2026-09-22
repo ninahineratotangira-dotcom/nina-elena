@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Safe Place — Design Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
 /* ==========================================================================
    MY SAFE PLACE — brand layer for Shopify Dawn
    by Reiko Gray
@@ -391,3 +401,111 @@ input:focus, textarea:focus, select:focus { border-bottom-color: var(--msp-ink);
   --color-background: 21 20 18;
   --color-foreground: 242 238 232;
 }
+
+
+/* --- preview-only scaffolding (not part of the theme) --- */
+* { box-sizing: border-box; }
+body { margin: 0; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(1rem, 5vw, 4rem); }
+.hdr { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.nav { display: flex; gap: 2rem; flex-wrap: wrap; }
+.nav a { text-decoration: none; }
+.hero { padding-block: var(--msp-s6) var(--msp-s5); max-width: 22ch; }
+.hero p { color: var(--msp-stone); max-width: 42ch; font-size: 1.05rem; }
+.shot { aspect-ratio: 4/5; background: var(--msp-porcelain); display: grid; place-items: center; }
+.shot span { font-size: .64rem; letter-spacing: .22em; text-transform: uppercase; color: var(--msp-faint); }
+.grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); column-gap: var(--msp-s4); row-gap: var(--msp-s4); }
+.pdp { display: grid; grid-template-columns: 1fr 1fr; gap: var(--msp-s5); align-items: start; }
+@media (max-width: 849px) { .pdp { grid-template-columns: 1fr; } }
+.chips { display: flex; gap: .6rem; flex-wrap: wrap; margin-block: var(--msp-s3); }
+.chip { border: 1px solid var(--msp-rule-firm); padding: .85rem 1.6rem; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--msp-stone); }
+.chip.on { background: var(--msp-ink); border-color: var(--msp-ink); color: var(--msp-linen); }
+.rule { border: 0; border-top: 1px solid var(--msp-rule); margin: 0; }
+.note { font-size: .8rem; color: var(--msp-stone); letter-spacing: .04em; }
+.sw { display: flex; gap: 0; flex-wrap: wrap; margin-top: var(--msp-s2); }
+.sw div { width: 96px; height: 76px; display: flex; align-items: flex-end; padding: .4rem; font-size: .58rem; letter-spacing: .08em; }
+.toggle { position: fixed; top: 1rem; right: 1rem; z-index: 9; font-size: .64rem; letter-spacing: .18em; text-transform: uppercase; background: var(--msp-ink); color: var(--msp-linen); border: 0; padding: .7rem 1.1rem; cursor: pointer; font-family: 'Jost',sans-serif; }
+</style>
+</head>
+<body>
+<button class="toggle" onclick="document.documentElement.dataset.mspTheme = document.documentElement.dataset.mspTheme === 'dark' ? '' : 'dark'">Toggle dark</button>
+<div class="wrap">
+
+  <header class="header hdr">
+    <a class="header__heading-link" href="#">My Safe Place</a>
+    <nav class="nav">
+      <a class="header__menu-item" href="#">Shop</a>
+      <a class="header__menu-item" href="#">The Whole Bed</a>
+      <a class="header__menu-item" href="#">Guide</a>
+      <a class="header__menu-item" href="#">About</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>The best comfort for your safe place.</h1>
+    <p>New Zealand duck down, filled to order. Five things, made properly.</p>
+    <p style="margin-top:2rem"><a class="button" href="#">Shop the bed</a></p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="shopify-section">
+    <p class="msp-label">The collection</p>
+    <div class="grid3">
+      <div class="card"><div class="card__media shot"><span>Duvet — hero shot</span></div>
+        <h3 class="card__heading"><a href="#">The Duvet</a></h3>
+        <p class="price">$549</p></div>
+      <div class="card"><div class="card__media shot"><span>Pillow</span></div>
+        <h3 class="card__heading"><a href="#">The Pillow</a></h3>
+        <p class="price">$129</p></div>
+      <div class="card"><div class="card__media shot"><span>Silk mask</span></div>
+        <h3 class="card__heading"><a href="#">The Silk Mask</a></h3>
+        <p class="price">$49</p></div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="shopify-section pdp">
+    <div class="shot" style="aspect-ratio:3/4"><span>Baffle box detail</span></div>
+    <div class="product__description rte">
+      <p class="msp-label">Made to order</p>
+      <h2>The Duvet</h2>
+      <p>The whole point of a bed is that it's the one place nobody can get at you.</p>
+      <p>Heavy enough to feel like something is over you, light enough that you forget it's there — a harder balance than it sounds, and why most duvets are either smothering or weightless.</p>
+      <div class="chips"><span class="chip">Single</span><span class="chip on">Queen</span><span class="chip">King</span></div>
+      <p class="price">$549</p>
+      <p><a class="button" href="#">Pre-order</a> &nbsp; <a class="button button--secondary" href="#">The whole bed</a></p>
+      <p class="note">Dispatch 10–15 working days. Cancel any time before it ships.</p>
+      <h3>Specifications</h3>
+      <ul>
+        <li>90% New Zealand duck down, 10% duck feather</li>
+        <li>Baffle-box construction, walled chambers</li>
+        <li>100% cotton down-proof casing</li>
+        <li>Filled and finished in New Zealand</li>
+        <li>Professional clean only</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="shopify-section">
+    <p class="msp-label">Palette</p>
+    <div class="sw">
+      <div style="background:#FAF8F5;color:#6E675E">Linen</div>
+      <div style="background:#F3EFE9;color:#6E675E">Porcelain</div>
+      <div style="background:#1B1917;color:#FAF8F5">Ink 16.5:1</div>
+      <div style="background:#6E675E;color:#FAF8F5">Stone 5.3:1</div>
+      <div style="background:#9A6F4F;color:#FAF8F5">Clay</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>My Safe Place — by Reiko Gray · Filled for you, in New Zealand.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

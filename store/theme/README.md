@@ -12,17 +12,38 @@ Brand layer for Shopify's free **Dawn** theme. Dawn is well-built, fast and free
    {{ 'my-safe-place.css' | asset_url | stylesheet_tag }}
    ```
 
-4. **Theme settings → Typography:** Headings `Fraunces`, Body `Inter`
-5. **Theme settings → Colors:** set the background to `#0F1420` so the theme editor preview matches
+4. Also before `</head>`, add the fonts:
+
+   ```html
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+   ```
+
+5. **Theme settings → Colors:** set the background to `#FAF8F5` so the theme editor preview matches
 
 ## What it does
 
-- Dark-first palette from `../brand/brand-guide.md`
-- Serif headings (Fraunces) against neutral body text (Inter)
-- Styles the mandated medical disclaimer as a quiet footnote rather than body copy
-- Constrains long-form text to a readable measure
-- Respects `prefers-reduced-motion` and `prefers-color-scheme: light`
-- Focus rings meet WCAG AA — `--bone` on `--ink` is ~15.8:1
+Elegant, minimal, light — see `../brand/brand-guide.md` for the reasoning.
+
+- Warm off-white palette; no pure black or white anywhere
+- Cormorant Garamond display against Jost body
+- **Strips Dawn's chrome**: card backgrounds, borders, shadows and rounded corners all removed. Hairlines do the separating
+- Generous section padding — the whitespace is the luxury signal
+- Spec lists render as hairline-separated rows rather than bullets
+- The header renders the `by Reiko Gray` byline automatically beneath the store name, and drops it on narrow screens
+- Styles the medical disclaimer as a quiet footnote
+- Warm dark mode via `prefers-color-scheme`, overridable with `data-msp-theme`
+- Respects `prefers-reduced-motion`
+- Contrast verified: ink 16.5:1, stone 5.3:1 — both WCAG AA body
+
+## Preview it first
+
+```bash
+node build-preview.mjs && open preview.html
+```
+
+Renders the full system with no Shopify install. Re-run after any CSS change.
 
 ## Homepage section order
 
