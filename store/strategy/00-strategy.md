@@ -43,12 +43,12 @@ Payment processing modelled at 2.9% + $0.30.
 
 | SKU | Cost | Retail | Gross profit | Margin |
 |---|---|---|---|---|
-| The Slow Wave Protocol (digital) | 0 | 29 | 27.86 | 96% |
+| The Wind-Down Guide (digital) | 0 | 29 | 27.86 | 96% |
 | The Silk Mask | 5.50 | 49 | 42.08 | 86% |
 | The Pillow | 62 | 129 | 63.16 | 49% |
 | The Duvet — Queen | 295 | 549 | 238.78 | 43% |
 | The Duvet — King | 350 | 649 | 280.08 | 43% |
-| **The Safe Space — Queen** | 424 | 749 | 303.02 | 40% |
+| **The Whole Bed — Queen** | 424 | 749 | 303.02 | 40% |
 
 Bedding margins are structurally lower than accessories — 40–50%, not 80%. That is normal for the category and it is fine, because the **absolute profit per order is 6–10× higher.** One Safe Space sale nets more than eleven silk masks.
 
@@ -77,7 +77,7 @@ So the store is built as a **trust ladder**, cheapest first:
 
 | Step | Product | Price | What it buys you |
 |---|---|---|---|
-| 1 | The Slow Wave Protocol | $29 | An email address, and a buyer who has now paid you once |
+| 1 | The Wind-Down Guide | $29 | An email address, and a buyer who has now paid you once |
 | 2 | The Silk Mask | $49 | A real delivery, a real product in hand, a review |
 | 3 | The Duvet / Safe Space | $429–849 | The actual business |
 

@@ -53,7 +53,9 @@ Describe **the object, the sensation, and the ritual.** Never the physiological 
 **The test:** does the sentence describe a *property of the object* or a *change in the customer's body*? Properties are safe. Bodily changes are claims.
 
 ### Naming the brand's guide
-The digital product is titled **The Slow Wave Protocol**. "Slow-wave sleep" is a descriptive sleep-stage term, which is fine as a brand reference — but the guide must never claim to *increase* slow-wave sleep. It is framed throughout as **environment and routine education**, not treatment.
+The digital product is titled **The Wind-Down Guide** — deliberately named after a *routine*, not an outcome. A title like "The Deep Sleep Protocol" would imply a physiological result and drag the product toward the therapeutic-goods line. It is framed throughout as **environment and routine education**, not treatment.
+
+The brand name itself is safe: *My Safe Place* describes a feeling about a room, not an effect on a body. Keep it that way — "your safe place" is fine, "clinically calming" is not.
 
 ## Product-by-product status
 

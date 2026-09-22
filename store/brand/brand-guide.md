@@ -1,20 +1,47 @@
-# SLOW WAVE — Brand Guide
+# MY SAFE PLACE — Brand Guide
 
 ## The name
 
-**Slow Wave.** Slow-wave sleep is the deep, restorative stage of the sleep cycle — so the name is grounded in real sleep science without making a claim about it. It also reads as calm and unhurried, which is the feeling the whole store is selling.
+**My Safe Place** — a store by **Reiko Gray**.
 
-Short, ownable, easy to say, works as a wordmark.
+Two things are doing work here.
 
-> **On the name:** *Slow Wave* works &mdash; slow-wave sleep is the deep restorative stage, so it is grounded without making a claim. If you want the name to carry the refuge idea more directly, **Haven**, **Eider** or **Quiet Hours** are closer to the concept; say the word and the whole build renames in one pass. Slow Wave is the default because it is more ownable and less generic than "Haven".
+*My Safe Place* is written from the customer's side, not the brand's. It isn't a name describing a product; it's the thing they already call their bed in their own head. That makes the tagline almost redundant, which is the sign of a good name.
 
-> ⚠️ **Verify before committing:** check `slowwave.co.nz` / `slowwave.com` availability and search the IPONZ trade mark register (and IP Australia) for conflicts in class 24 (textiles) and class 35 (retail). Do not print packaging until this is cleared.
+*by Reiko Gray* is the part incumbents can't copy. A duvet from a faceless brand is a commodity; a duvet from a named person is a maker's product, and a named person can answer an email. For a new store asking $549 on pre-order, **a name attached to the promise is a trust asset**, not decoration. Use it: sign the emails, sign the About page.
+
+**Lockup:**
+
+```
+MY SAFE PLACE
+by Reiko Gray
+```
+
+Set the store name as *My Safe Place*, with *by Reiko Gray* beneath it at roughly 40% the size, in Inter, letter-spaced. On narrow screens the byline drops away and the name stands alone.
+
+## Tagline
+
+> **The best comfort for your safe place.**
+
+Alternatives, if you want to hear them said aloud before committing — all the same idea, different weight:
+
+- *Comfort made for your safe place.* — slightly tighter, less superlative
+- *The most comfortable place you own.* — leans on the bed itself
+- *Made for the safest place in the house.* — warmer, more specific
+
+Any of these swaps in one pass; nothing downstream depends on the wording.
+
+> **A note on "best":** superlatives like this read as puffery and are generally fine. What is **not** fine is a *comparative* claim of fact — "warmer than down alternatives", "lasts longer than X" — which would need substantiation under the Fair Trading Act. Keep the superlative vague and the specifics factual.
+
+> ⚠️ **Verify before committing:** check `mysafeplace.co.nz` and `reikogray.com` availability, and search the IPONZ trade mark register (and IP Australia) for conflicts in class 24 (textiles) and class 35 (retail). "My Safe Place" is a common phrase, which cuts both ways — harder to register as a trade mark, but also harder for anyone to stop you using. The distinctive, registrable asset is the **full lockup with the byline**. Do not print packaging until this is cleared.
+
+> ⚠️ **Trading name vs legal entity:** you can trade under any name you like, but under the Fair Trading Act customers must be able to identify and contact the actual trader. *My Safe Place by Reiko Gray* is the brand; the **Contact page must still show the registered entity name and NZBN.** Both placeholders are already in `content/pages.json`.
 
 ## Positioning
 
-> A bed you don't want to get out of.
+> The best comfort for your safe place.
 
-The duvet is the product. **The safe space is what it's for.**
+The duvet is the product. **The safe place is what it's for.**
 
 That distinction is the entire brand. Competitors sell fill power, thread count and GSM &mdash; a spec war you cannot win against incumbents with better buying power and a decade of reviews. Nobody lies awake wishing their duvet had more loft. They want the bed to be the one place in the house where nothing is required of them.
 
@@ -39,9 +66,7 @@ Quiet, plain, a little wry. Never clinical, never wellness-guru, never shouty.
 - **Never fear-sell.** No "sleep deprivation is killing you." That is both ugly and a regulatory risk.
 - **Admit what it isn't.** Honesty converts better than hype and is safer.
 
-Tagline: **A bed you don't want to get out of.**
-
-Secondary, for the bedding itself: **Filled for you, in New Zealand.**
+Taglines live in their own section above. For the bedding specifically, the supporting line is: **Filled for you, in New Zealand.**
 
 ## Palette
 

@@ -1,26 +1,68 @@
 {
   "_meta": {
-    "brand": "Slow Wave",
+    "brand": "My Safe Place by Reiko Gray",
     "currency": "NZD",
     "positioning": "A bed you don't want to get out of. The duvet is the product; the safe space is what it's for.",
     "note": "Prices GST-inclusive. Cost fields are modelled estimates pending real supplier quotes from a NZ down supplier. Duvet stock is 0 by design - it sells on pre-order.",
     "compliance": "All copy vetted against strategy/01-compliance-nz-au.md INCLUDING the down section. Never edit a down percentage without a finished-product test certificate on file.",
-    "down_spec_source": "PLACEHOLDER - replace the 90/10 ratio below with whatever your supplier certifies on the FINISHED duvet, and keep the certificate."
+    "down_spec_source": "PLACEHOLDER - replace the 90/10 ratio below with whatever your supplier certifies on the FINISHED duvet, and keep the certificate.",
+    "tagline": "The best comfort for your safe place."
   },
   "products": [
     {
       "handle": "the-duvet",
       "title": "The Duvet",
       "product_type": "Duvet Inner",
-      "vendor": "Slow Wave",
-      "tags": ["hero", "down", "pre-order", "nz-made"],
+      "vendor": "Reiko Gray",
+      "tags": [
+        "hero",
+        "down",
+        "pre-order",
+        "nz-made"
+      ],
       "requires_shipping": true,
       "preorder": true,
-      "options": [{ "name": "Size", "values": ["Single", "Queen", "King"] }],
+      "options": [
+        {
+          "name": "Size",
+          "values": [
+            "Single",
+            "Queen",
+            "King"
+          ]
+        }
+      ],
       "variants": [
-        { "option_values": { "Size": "Single" }, "price": "429.00", "cost": "235.00", "sku": "SW-DUV-S", "weight_grams": 1300, "inventory_quantity": 0 },
-        { "option_values": { "Size": "Queen" },  "price": "549.00", "cost": "295.00", "sku": "SW-DUV-Q", "weight_grams": 1800, "inventory_quantity": 0 },
-        { "option_values": { "Size": "King" },   "price": "649.00", "cost": "350.00", "sku": "SW-DUV-K", "weight_grams": 2200, "inventory_quantity": 0 }
+        {
+          "option_values": {
+            "Size": "Single"
+          },
+          "price": "429.00",
+          "cost": "235.00",
+          "sku": "MSP-DUV-S",
+          "weight_grams": 1300,
+          "inventory_quantity": 0
+        },
+        {
+          "option_values": {
+            "Size": "Queen"
+          },
+          "price": "549.00",
+          "cost": "295.00",
+          "sku": "MSP-DUV-Q",
+          "weight_grams": 1800,
+          "inventory_quantity": 0
+        },
+        {
+          "option_values": {
+            "Size": "King"
+          },
+          "price": "649.00",
+          "cost": "350.00",
+          "sku": "MSP-DUV-K",
+          "weight_grams": 2200,
+          "inventory_quantity": 0
+        }
       ],
       "body_html": "<p>The whole point of a bed is that it's the one place nobody can get at you.</p><p>This is the thing that makes that true. Heavy enough to feel like something is over you, light enough that you forget it's there &mdash; which is a harder balance to strike than it sounds, and it's why most duvets are either smothering or weightless.</p><p>Filled with 90% New Zealand duck down and 10% duck feather, in a baffle-box cotton casing. Baffle box matters: the fill sits in walled compartments rather than sewn-through channels, so it can loft properly and doesn't migrate to the edges and leave you with a cold patch at 3am.</p><h3>Specifications</h3><ul><li>90% New Zealand duck down, 10% duck feather</li><li>Baffle-box construction, walled chambers</li><li>100% cotton down-proof casing, tightly woven so the fill stays put</li><li>Filled and finished in New Zealand</li><li>Sizes: Single, Queen, King</li><li>Professional clean only &mdash; a good one lasts a decade or more</li></ul><h3>Where the down comes from</h3><p>A by-product of a rural North Island duck farm &mdash; recovered after processing, never live-plucked. We'll tell you the farm if you ask.</p><h3>Made to order</h3><p>Each duvet is filled after you order it, which is why we can make it properly and why it isn't sitting in a warehouse. <strong>Dispatch is 10&ndash;15 working days from order.</strong> You'll get an email the day it ships. If that window ever slips, we'll tell you before it does and refund you on the spot if you'd rather not wait.</p>"
     },
@@ -28,13 +70,17 @@
       "handle": "the-pillow",
       "title": "The Pillow",
       "product_type": "Pillow",
-      "vendor": "Slow Wave",
-      "tags": ["down", "pre-order", "nz-made"],
+      "vendor": "Reiko Gray",
+      "tags": [
+        "down",
+        "pre-order",
+        "nz-made"
+      ],
       "requires_shipping": true,
       "preorder": true,
       "price": "129.00",
       "cost": "62.00",
-      "sku": "SW-PIL-STD",
+      "sku": "MSP-PIL-STD",
       "weight_grams": 900,
       "inventory_quantity": 0,
       "body_html": "<p>Medium loft. The one most people want and almost nobody buys, because shops stock firm.</p><p>Same fill as the duvet &mdash; 90% New Zealand duck down, 10% duck feather &mdash; in a cotton casing with piped edges so it holds its shape instead of folding in half by February.</p><h3>Specifications</h3><ul><li>90% New Zealand duck down, 10% duck feather</li><li>Medium loft, standard 48 x 74cm</li><li>100% cotton down-proof casing, piped edge</li><li>Filled and finished in New Zealand</li><li>Professional clean only</li></ul><p><strong>Dispatch 10&ndash;15 working days from order</strong> &mdash; filled after you order, like the duvet.</p>"
@@ -43,49 +89,113 @@
       "handle": "silk-sleep-mask",
       "title": "The Silk Mask",
       "product_type": "Sleep Mask",
-      "vendor": "Slow Wave",
-      "tags": ["textile", "in-stock"],
+      "vendor": "Reiko Gray",
+      "tags": [
+        "textile",
+        "in-stock"
+      ],
       "requires_shipping": true,
       "price": "49.00",
       "cost": "5.50",
-      "sku": "SW-MASK-01",
+      "sku": "MSP-MASK-01",
       "weight_grams": 45,
       "inventory_quantity": 100,
       "body_html": "<p>Blocks all of the light. That's the whole job, and most masks don't do it.</p><p>Cheap masks leak at the bridge of the nose. This one is contoured there, so the seal holds when you turn over. Mulberry silk on both faces &mdash; cool against the skin, and it doesn't drag at the corners of your eyes the way cotton does.</p><h3>Specifications</h3><ul><li>22-momme mulberry silk, both sides</li><li>Contoured nose seal &mdash; blocks 100% of light</li><li>Adjustable flat-back strap, no lump against the pillow</li><li>45g</li><li>Hand wash cold, dry flat</li></ul><p><strong>In stock &mdash; ships next working day.</strong></p>"
     },
     {
-      "handle": "slow-wave-protocol",
-      "title": "The Slow Wave Protocol",
+      "handle": "the-wind-down-guide",
+      "title": "The Wind-Down Guide",
       "product_type": "Digital Guide",
-      "vendor": "Slow Wave",
-      "tags": ["digital", "instant-download", "in-stock"],
+      "vendor": "Reiko Gray",
+      "tags": [
+        "digital",
+        "instant-download",
+        "in-stock"
+      ],
       "requires_shipping": false,
       "price": "29.00",
       "cost": "0.00",
-      "sku": "SW-PROTO-01",
+      "sku": "MSP-GUIDE-01",
       "inventory_policy": "continue",
       "body_html": "<p>A 34-page guide to the twenty minutes before bed.</p><p>Not an app. Not a tracker. No notifications. Just a clear walkthrough of how to set up a room and an evening routine that actually lets you switch off &mdash; written for people who have already tried the apps and are still lying there at 1am.</p><h3>What's inside</h3><ul><li>The room audit &mdash; light, temperature, sound, and the four things most bedrooms get wrong</li><li>A 20-minute wind-down sequence you can actually stick to</li><li>The screen problem, and what to do if giving them up isn't realistic</li><li>Building a routine that survives a bad week</li><li>Two printable one-page checklists</li></ul><h3>Format</h3><p>PDF, delivered by email the moment you order. Read it on anything.</p><p><em>This guide is general educational information about sleep environment and routine. It is not medical advice, and it is not intended to diagnose, treat, cure or prevent any condition. If you have ongoing sleep difficulties, please speak to your doctor.</em></p>"
     },
     {
-      "handle": "the-safe-space",
-      "title": "The Safe Space — Complete Bed",
+      "handle": "the-whole-bed",
+      "title": "The Whole Bed",
       "product_type": "Bundle",
-      "vendor": "Slow Wave",
-      "tags": ["bundle", "hero", "down", "pre-order", "best-value"],
+      "vendor": "Reiko Gray",
+      "tags": [
+        "bundle",
+        "hero",
+        "down",
+        "pre-order",
+        "best-value"
+      ],
       "requires_shipping": true,
       "preorder": true,
-      "options": [{ "name": "Size", "values": ["Single", "Queen", "King"] }],
-      "variants": [
-        { "option_values": { "Size": "Single" }, "price": "569.00", "compare_at_price": "636.00", "cost": "302.00", "sku": "SW-SET-S", "weight_grams": 2250, "inventory_quantity": 0 },
-        { "option_values": { "Size": "Queen" },  "price": "749.00", "compare_at_price": "836.00", "cost": "424.00", "sku": "SW-SET-Q", "weight_grams": 3650, "inventory_quantity": 0 },
-        { "option_values": { "Size": "King" },   "price": "849.00", "compare_at_price": "936.00", "cost": "479.00", "sku": "SW-SET-K", "weight_grams": 4050, "inventory_quantity": 0 }
+      "options": [
+        {
+          "name": "Size",
+          "values": [
+            "Single",
+            "Queen",
+            "King"
+          ]
+        }
       ],
-      "body_html": "<p>The whole bed, in one go.</p><p>The Duvet, two Pillows, The Silk Mask and The Slow Wave Protocol. Everything that makes the bed the best place in the house, bought together because that's how you'd actually use it &mdash; and because buying a good duvet and then keeping your old flat pillows rather defeats the point.</p><h3>What's included</h3><ul><li><strong>The Duvet</strong> &mdash; 90% NZ duck down, baffle box, your size</li><li><strong>Two Pillows</strong> &mdash; same fill, medium loft</li><li><strong>The Silk Mask</strong> &mdash; 22-momme mulberry silk ($49)</li><li><strong>The Slow Wave Protocol</strong> &mdash; 34-page guide, arrives by email straight away ($29)</li></ul><h3>Made to order</h3><p>The guide is emailed to you immediately. <strong>The bedding is filled to order and dispatches in 10&ndash;15 working days</strong> &mdash; we'll email you the day it ships, and if that window ever slips we'll tell you before it does and refund you if you'd rather not wait.</p>"
+      "variants": [
+        {
+          "option_values": {
+            "Size": "Single"
+          },
+          "price": "569.00",
+          "compare_at_price": "636.00",
+          "cost": "302.00",
+          "sku": "MSP-SET-S",
+          "weight_grams": 2250,
+          "inventory_quantity": 0
+        },
+        {
+          "option_values": {
+            "Size": "Queen"
+          },
+          "price": "749.00",
+          "compare_at_price": "836.00",
+          "cost": "424.00",
+          "sku": "MSP-SET-Q",
+          "weight_grams": 3650,
+          "inventory_quantity": 0
+        },
+        {
+          "option_values": {
+            "Size": "King"
+          },
+          "price": "849.00",
+          "compare_at_price": "936.00",
+          "cost": "479.00",
+          "sku": "MSP-SET-K",
+          "weight_grams": 4050,
+          "inventory_quantity": 0
+        }
+      ],
+      "body_html": "<p>The whole bed, in one go.</p><p>The Duvet, two Pillows, The Silk Mask and The Wind-Down Guide. Everything that makes the bed the best place in the house, bought together because that's how you'd actually use it &mdash; and because buying a good duvet and then keeping your old flat pillows rather defeats the point.</p><h3>What's included</h3><ul><li><strong>The Duvet</strong> &mdash; 90% NZ duck down, baffle box, your size</li><li><strong>Two Pillows</strong> &mdash; same fill, medium loft</li><li><strong>The Silk Mask</strong> &mdash; 22-momme mulberry silk ($49)</li><li><strong>The Wind-Down Guide</strong> &mdash; 34-page guide, arrives by email straight away ($29)</li></ul><h3>Made to order</h3><p>The guide is emailed to you immediately. <strong>The bedding is filled to order and dispatches in 10&ndash;15 working days</strong> &mdash; we'll email you the day it ships, and if that window ever slips we'll tell you before it does and refund you if you'd rather not wait.</p>"
     }
   ],
   "collections": [
-    { "handle": "all", "title": "Everything", "body_html": "<p>Five things. That's deliberate.</p>" },
-    { "handle": "the-bed", "title": "The Bed", "body_html": "<p>Down, filled in New Zealand, made after you order it. The part of the house worth spending money on.</p>" },
-    { "handle": "in-stock", "title": "Ships This Week", "body_html": "<p>No waiting. These are on the shelf and go out the next working day.</p>" }
+    {
+      "handle": "all",
+      "title": "Everything",
+      "body_html": "<p>Five things. That's deliberate.</p>"
+    },
+    {
+      "handle": "the-bed",
+      "title": "The Bed",
+      "body_html": "<p>Down, filled in New Zealand, made after you order it. The part of the house worth spending money on.</p>"
+    },
+    {
+      "handle": "in-stock",
+      "title": "Ships This Week",
+      "body_html": "<p>No waiting. These are on the shelf and go out the next working day.</p>"
+    }
   ]
 }

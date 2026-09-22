@@ -5,11 +5,11 @@ Brand layer for Shopify's free **Dawn** theme. Dawn is well-built, fast and free
 ## Install
 
 1. **Online Store → Themes → Add theme → Dawn** (if not already installed)
-2. **⋯ → Edit code → Assets → Add a new asset** → upload `assets/slow-wave.css`
+2. **⋯ → Edit code → Assets → Add a new asset** → upload `assets/my-safe-place.css`
 3. Open `layout/theme.liquid`, and immediately before `</head>` add:
 
    ```liquid
-   {{ 'slow-wave.css' | asset_url | stylesheet_tag }}
+   {{ 'my-safe-place.css' | asset_url | stylesheet_tag }}
    ```
 
 4. **Theme settings → Typography:** Headings `Fraunces`, Body `Inter`

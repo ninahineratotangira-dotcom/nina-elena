@@ -1,9 +1,9 @@
 {
-  "name": "slow-wave-store",
+  "name": "my-safe-place-store",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Shopify store setup for Slow Wave",
+  "description": "Shopify store setup for My Safe Place",
   "engines": { "node": ">=18" },
   "scripts": {
     "check": "node check-claims.mjs",

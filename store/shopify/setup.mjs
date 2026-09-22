@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Slow Wave - Shopify store setup.
+ * My Safe Place - Shopify store setup.
  *
  * Builds the store from ../products/catalog.json and ../content/pages.json:
  * products with pricing and cost, collections, and content pages.
@@ -342,8 +342,8 @@ async function createCollections(client, productIds, publicationId) {
   // "Everything" holds the full catalogue; the curated ones are filled by hand.
   const membership = {
     all: catalog.products.map((p) => p.handle),
-    'the-bed': ['the-safe-space', 'the-duvet', 'the-pillow'],
-    'in-stock': ['silk-sleep-mask', 'slow-wave-protocol'],
+    'the-bed': ['the-whole-bed', 'the-duvet', 'the-pillow'],
+    'in-stock': ['silk-sleep-mask', 'the-wind-down-guide'],
   };
 
   for (const col of catalog.collections) {
@@ -413,7 +413,7 @@ async function createPages(client) {
 // ---------------------------------------------------------------- main
 
 async function main() {
-  console.log(c.bold('\nSlow Wave — Shopify setup'));
+  console.log(c.bold('\nMy Safe Place — Shopify setup'));
   if (DRY_RUN) console.log(c.yellow('DRY RUN — nothing will be created.'));
   if (AS_DRAFT) console.log(c.yellow('Products will be created as DRAFT.'));
 
