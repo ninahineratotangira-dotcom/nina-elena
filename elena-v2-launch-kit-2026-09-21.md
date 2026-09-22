@@ -152,3 +152,55 @@ The old page posted eight reels in five days with an affiliate link in the bio f
 4. **Week 4:** first affiliate click-throughs, on a direct-brand program, with the disclosure in place.
 
 Reach is not the constraint — a 77-follower account did 231K views this month. Capture is the constraint, and it is the one thing the old page had none of.
+
+---
+
+## 8. Appendix — the faceless variant (added 22 Sep)
+
+Going faceless changes the naming question, and it changes something bigger: **Instagram's "AI-generated profile" label applies to profiles that feature an AI-generated *person*.** No person on screen, no label requirement, and the single most likely cause of the old page's removal stops existing. It also removes the continuity problem (no face to keep consistent across 50 clips) and the lip-sync problem.
+
+**The cost:** you lose "I'm 67". Every face-based outlier in section 1 is powered by an age reveal, and a page with no face cannot make that claim. So the hook engine has to change.
+
+**What the faceless outliers actually use** (fresh pull, same 30-day window, same niche):
+
+| Account | Views | vs. median | Hook | Visual |
+|---|---|---|---|---|
+| @froyaorganics | **2.5M** | 21.7x | "YOU AGE HOW YOU EAT." | Faceless, text list over a dim table b-roll, 5s |
+| @blooddocdad | **2.2M** | 9.5x | "Five foods I avoid as a cancer doctor" | Hands chopping cucumber, ambient chopping SFX |
+| @ctrlhunger | **2.1M** | 7.2x | "SMALL HABITS THAT SLOW AGING (BIG TIME)" | Numbered list over looping gym b-roll |
+| @flarefreediary (TT) | 448.1K | **95.7x** | "MORNING RESET · Anti-inflammatory · Gut support" | Top-down food assembly, 9s |
+| @kennyglowing (TT) | 2.9M | **6199.9x** | Celebrity audio synced to hands making tea | Split screen, 4.8K-follower account |
+
+The faceless hook replaces *age* with one of three things: **an authority** ("as a cancer doctor"), **a declarative law** ("you age how you eat"), or **a labelled ritual** ("morning reset"). Everything else from section 3 holds — static camera, looping 5–10s, static text, list in the caption. Ambient sound (chopping, pouring, boiling) is a live alternative to music and is what the 2.2M reel used.
+
+**Naming.** Faceless pages are named for the *idea*, not a person — but keeping a nonna frame lets the captions stay in first person ("my nonna kept a bowl of olive oil by the sink"), which preserves the one differentiator this project has. Checked against live Instagram on 22 Sep:
+
+| Handle | Display name | Status |
+|---|---|---|
+| **`@nonna.knew`** | What Nonna Knew | **free** ← recommended |
+| `@whatnonnaknew` | What Nonna Knew | free |
+| `@thenonnalist` | The Nonna List | free |
+| `@nonna.rules` | Nonna Rules | free |
+| `@the.nonna.method` | The Nonna Method | free |
+| `@nonna.protocol` | The Nonna Protocol | free |
+| `@nonna.rosa.habits` | Nonna Rosa | free (keeps a named persona) |
+| `@olive.hour.habits` | The Olive Hour | free |
+| `@nonnas.table` | — | taken (732 followers, catering business) |
+| `@the.olive.hour` | — | taken (11 posts, Mediterranean food) |
+| `@olive.and.salt` | — | taken (private) |
+| `@theboringlist` | — | taken (private) |
+
+`@nonna.knew` is the pick: three syllables, states the whole premise, works as a caption sign-off ("nonna knew 🫒"), and leaves room for the "boring habits" language in the bio without burning it in the handle.
+
+**Bio for the faceless version** (no AI label needed, affiliate disclosure still required):
+> What Nonna Knew 🫒
+> The boring Mediterranean habits that outlived every trend
+> Comment BORING for the one-page list
+> #ad · affiliate link ⬇️
+
+**The ten posts, faceless.** Same captions from section 4, new visuals — hands and food only, top-down or static:
+olive oil poured into a shallow dish · lemon squeezed into a glass · sea salt pinched into water · herbs cut with scissors · a straw hat lifted off a hook · a silk pillowcase smoothed · anchovies laid on bread · a pot of greens simmering · espresso poured *after* a glass of water · a hand closing a door on the evening light.
+
+Shoot ambient sound with each one. The hooks become: "My nonna was 94. These are the 10 boring things she did every day." / "YOU AGE HOW YOU EAT." / "The 10 things in a Mediterranean nonna's kitchen that a dermatologist would charge you for."
+
+**Availability caveat:** these were checked by public profile lookup. A handle that returns nothing can still be reserved or held by a deactivated account — confirm in the Instagram signup form before you commit to one, and grab the matching TikTok and YouTube handles the same day.
